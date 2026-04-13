@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #1a2332;
+    --color-gold: #c9a84c;
+    --color-gold-light: #e8c96d;
+    --color-surface: #243044;
+    --color-text: #f0f0f0;
+    --color-text-muted: #8899aa;
+    --color-border: #2d3a4d;
+
+    --color-bg: var(--color-primary);
+    --color-bg-elevated: var(--color-surface);
+    --color-bg-subtle: #121a26;
+    --color-text-secondary: #aabbcc;
+    --color-gold-hover: var(--color-gold-light);
+    --color-gold-dim: rgba(201, 168, 76, 0.15);
+    --color-gold-text: var(--color-gold);
+    --color-header-bg: rgba(26, 35, 50, 0.88);
+    --color-header-border: var(--color-border);
+    --color-card-shadow: rgba(0, 0, 0, 0.4);
+    /* Burnished Satin Gold - Rich, soft-focus luxury for high-end institutions */
+    --gold-gradient: linear-gradient(135deg, #b8943d 0%, #d4b86a 50%, #b8943d 100%);
+    --color-card-hover-shadow: rgba(201, 168, 76, 0.2);
+    --color-cta-primary-bg: var(--color-gold);
+    --color-cta-primary-text: #1a2332;
+    --color-cta-secondary-bg: transparent;
+    --color-cta-secondary-text: var(--color-text);
+    --color-cta-secondary-border: var(--color-text);
+    --color-whatsapp: #25d366;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    transition: background-color 0.4s ease;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-dim);
+    color: var(--color-text);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  [lang="ar"] body {
+    font-family: var(--font-arabic-body), serif;
+  }
+
+  [lang="en"] body {
+    font-family: var(--font-english-body), serif;
+  }
+}
+
+@layer components {
+
+  /* ─── Gold Shine Utility ─── */
+  .gold-shine {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .gold-border-shine {
+    border-image: var(--gold-gradient) 1;
+  }
+
+  /* ─── Section gold divider ─── */
+  .section-divider {
+    position: relative;
+  }
+
+  /* ─── Glassy Ambient Background ─── */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: 
+      radial-gradient(circle at 15% 15%, rgba(158, 130, 69, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 30%, rgba(20, 60, 40, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 10%, rgba(158, 130, 69, 0.05) 0%, transparent 40%),
+      rgba(5, 15, 9, 1);
+    background-attachment: fixed;
+    pointer-events: none;
+  }
+
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    opacity: 0.3;
+  }
+
+  /* ─── Card hover glow ─── */
+  .card-glow {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+  }
+
+  .card-glow:hover {
+    border-color: var(--color-gold);
+    box-shadow:
+      0 18px 44px var(--color-card-shadow),
+      0 0 0 1px var(--color-card-hover-shadow);
+    transform: translateY(-4px);
+  }
+
+  /* ─── WhatsApp FAB ─── */
+  .fab-whatsapp {
+    position: fixed;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    inset-inline-end: max(1rem, env(safe-area-inset-right));
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background: var(--color-whatsapp);
+    color: white;
+    box-shadow:
+      0 8px 24px rgba(37, 211, 102, 0.35),
+      0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    animation: fab-enter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s both;
+  }
+
+  [dir="rtl"] .fab-whatsapp {
+    inset-inline-start: max(1rem, env(safe-area-inset-left));
+    inset-inline-end: auto;
+  }
+
+  .fab-whatsapp:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+      0 12px 32px rgba(37, 211, 102, 0.45),
+      0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .fab-whatsapp svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@layer utilities {
+  @keyframes fab-enter {
+    from {
+      opacity: 0;
+      transform: translateY(2rem) scale(0.6);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .scales-beam {
+    transform-origin: 12px 6px;
+    animation: scales-tilt 4s ease-in-out infinite;
+  }
+
+  @keyframes scales-tilt {
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    30% {
+      transform: rotate(4deg);
+    }
+
+    70% {
+      transform: rotate(-4deg);
+    }
+  }
+
+  .bg-ambient-glow {
+    animation: ambient-pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes ambient-pulse {
+
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  .cta-pulse {
+    animation: soft-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes soft-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(158, 130, 69, 0);
+    }
+
+    50% {
+      box-shadow: 0 0 20px 2px rgba(158, 130, 69, 0.15);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .loading-draw {
+    animation: draw-line 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .loading-fade {
+    animation: fade-in 0.5s ease forwards;
+  }
+
+  @keyframes draw-line {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes global-fade-out {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .animate-global-fade {
+    animation: global-fade-out 0.8s ease-in-out 2.5s forwards;
+  }
+
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+
+  .duration-600 {
+    transition-duration: 600ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .fab-whatsapp {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "google/gemini-3.1-pro",
+  "permission": {
+    "bash": "ask",
+    "edit": "ask",
+    "write": "ask"
+  },
+  "skills": {
+    "paths": [
+      "./skills"
+    ]
+  },
+  "agent": {
+    "orchestrator": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0.2,
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "bash": "ask",
+        "task": {
+          "*": "deny",
+          "build-agent": "allow",
+          "plan-agent": "allow",
+          "ui-builder": "allow",
+          "content-writer": "allow",
+          "security-auditor": "allow",
+          "animator": "allow",
+          "i18n-agent": "allow"
+        }
+      }
+    },
+    "build-agent": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0.2,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "bash": "ask",
+        "task": {
+          "*": "deny",
+          "ui-builder": "allow",
+          "content-writer": "allow",
+          "security-auditor": "allow",
+          "animator": "allow",
+          "i18n-agent": "allow"
+        }
+      }
+    },
+    "plan-agent": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0.1,
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "bash": "ask",
+        "task": {
+          "*": "deny",
+          "build-agent": "allow",
+          "ui-builder": "allow",
+          "content-writer": "allow",
+          "security-auditor": "allow",
+          "animator": "allow",
+          "i18n-agent": "allow"
+        }
+      }
+    },
+    "ui-builder": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0.3,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "bash": "deny",
+        "task": { "*": "deny" }
+      }
+    },
+    "content-writer": {
+      "model": "google/gemini-3-flash",
+      "temperature": 0.6,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "bash": "deny",
+        "task": { "*": "deny" }
+      }
+    },
+    "security-auditor": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0,
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "bash": {
+          "*": "deny",
+          "npm audit *": "allow",
+          "npx eslint *": "allow",
+          "npx tsc *": "allow",
+          "grep *": "allow",
+          "cat *": "allow",
+          "ls *": "allow"
+        },
+        "task": { "*": "deny" }
+      }
+    },
+    "animator": {
+      "model": "google/gemini-3.1-pro",
+      "temperature": 0.4,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "bash": "deny",
+        "task": { "*": "deny" }
+      }
+    },
+    "i18n-agent": {
+      "model": "google/gemini-3-flash",
+      "temperature": 0.3,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "bash": "deny",
+        "task": { "*": "deny" }
+      }
+    }
+  },
+  "instructions": [
+    "AGENTS.md"
+  ]
+}
