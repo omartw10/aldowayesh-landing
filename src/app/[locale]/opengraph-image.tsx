@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 export const alt = "المحامي محمد الدويش — شريك مدير في سي إم إس";
 export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const contentType = "D:\neurasyncai-projects\aldowayesh-landing\public\aldowayesh-og.png";
 
 export default async function Image({
   params,
