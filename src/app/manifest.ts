@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "د. حسن هاشم المالكي — محامٍ ومستشار قانوني",
-    short_name: "د. حسن المالكي",
+    name: "Mohammed Al-Dowayesh | المحامي محمد الدويش",
+    short_name: "Al-Dowayesh",
     description:
-      "الموقع الرسمي للدكتور حسن هاشم المالكي — محامٍ ومستشار قانوني خبير في القانون المالي والتشريعي والترجمة المعتمدة.",
+      "خبير الإعسار وإعادة الهيكلة المالية — شريك مدير في سي إم إس CMS العالمية",
     start_url: "/ar",
     display: "standalone",
     background_color: "#0a1628",
