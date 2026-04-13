@@ -70,19 +70,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/aldowayesh-og.png",
         width: 1200,
         height: 630,
-        alt: "Dr. Hassan Hashem Al-Maliki — Attorney & Legal Consultant",
+        alt: "Mohammed Al-Dowayesh — Managing Partner at CMS Global",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Hassan Hashem Al-Maliki",
+    title: "Mohammed Al-Dowayesh",
     description:
-      "Premium bilingual legal advisory for institutions, investors, and cross-border matters.",
-    images: ["/og-image.png"],
+      "Managing Partner at CMS Global — Expert in Bankruptcy Law & Restructuring",
+    images: ["/aldowayesh-og.png"],
   },
 };
 

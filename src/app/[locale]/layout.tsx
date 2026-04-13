@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: "Mohammed Al-Dowayesh",
       images: [
         {
-          url: "/og-image.png",
+          url: "/aldowayesh-og.png",
           width: 1200,
           height: 630,
           alt: "المحامي محمد الدويش",
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: locale === "ar"
         ? "خبير الإعسار وإعادة الهيكلة"
         : "Bankruptcy & Restructuring Expert",
-      images: ["/og-image.png"],
+      images: ["/aldowayesh-og.png"],
     },
   };
 }
