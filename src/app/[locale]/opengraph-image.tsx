@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "د. حسن هاشم المالكي — محامٍ ومستشار قانوني";
+export const alt = "المحامي محمد الدويش — شريك مدير في سي إم إس";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -18,7 +18,7 @@ export default async function Image({
         style={{
           width: "1200px",
           height: "630px",
-          background: "linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%)",
+          background: "linear-gradient(135deg, #1a2332 0%, #243044 50%, #1a2332 100%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -61,11 +61,11 @@ export default async function Image({
           <div style={{
             fontSize: "56px",
             fontWeight: "700",
-            color: "#f5f0e8",
+            color: "#f0f0f0",
             textAlign: "center",
             lineHeight: 1.2,
           }}>
-            {isArabic ? "د. حسن هاشم المالكي" : "Dr. Hassan Hashem Al-Maliki"}
+            {isArabic ? "المحامي محمد الدويش" : "Mohammed Al-Dowayesh"}
           </div>
 
           {/* Gold divider */}
@@ -82,19 +82,19 @@ export default async function Image({
             textAlign: "center",
           }}>
             {isArabic
-              ? "محامٍ ومستشار قانوني — رخصة رقم ٣٥٣١"
-              : "Attorney & Legal Consultant — License No. 3531"}
+              ? "شريك مدير | سي إم إس (CMS) العالمية"
+              : "Managing Partner | CMS Global"}
           </div>
 
           {/* Specialties */}
           <div style={{
             fontSize: "18px",
-            color: "#8a9bb8",
+            color: "#8899aa",
             textAlign: "center",
           }}>
             {isArabic
-              ? "الدراسات التشريعية • الخدمات المالية • الترجمة المعتمدة"
-              : "Legislative Studies • Financial Law • Certified Translation"}
+              ? "نظام الإفلاس • إعادة الهيكلة • المنازعات المصرفية"
+              : "Bankruptcy Law • Restructuring • Banking Disputes"}
           </div>
         </div>
       </div>
