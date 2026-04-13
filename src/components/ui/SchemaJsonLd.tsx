@@ -18,7 +18,7 @@ export function SchemaJsonLd({ locale }: SchemaProps) {
     description: isArabic
       ? "شريك مدير في سي إم إس (CMS) العالمية — خبير معتمد في نظام الإفلاس السعودي وإعادة الهيكلة"
       : "Managing Partner at CMS Global — Certified Expert in Saudi Bankruptcy Law & Restructuring",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://aldowayesh-law.vercel.app",
     telephone: "+966506488848",
     image: "/aldowayesh-pic.png",
     priceRange: "$$$$",

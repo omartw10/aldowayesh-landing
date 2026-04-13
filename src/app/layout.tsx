@@ -42,49 +42,90 @@ const localeBootstrap = `(function () {
   document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
 })();`;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "Mohammed Al-Dowayesh | Managing Partner at CMS Global",
-    template: "%s | Mohammed Al-Dowayesh",
-  },
-  description:
-    "Official site of Mohammed Al-Dowayesh — Managing Partner at CMS Global, Expert in Saudi Bankruptcy Law & Restructuring.",
-  icons: {
-    icon: "/icon",
-    apple: "/apple-icon",
-  },
-  alternates: {
-    languages: {
-      ar: "/ar",
-      en: "/en",
-    },
-  },
-  openGraph: {
-    title: "Mohammed Al-Dowayesh",
-    description:
-      "شريك مدير | سي إم إس (CMS) العالمية\nخبير نظام الإفلاس السعودي • إعادة الهيكلة • التحكيم الدولي\n+17 عاماً من تمثيل القضايا المليارية",
-    url: siteUrl,
-    siteName: "Mohammed Al-Dowayesh",
-    locale: "ar_SA",
-    type: "website",
-    images: [
-      {
-        url: "/aldowayesh-og.png",
-        width: 1200,
-        height: 630,
-        alt: "المحامي محمد الدويش — شريك مدير في سي إم إس",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isArabic = locale === "ar";
+
+  const metadataBase = new URL(siteUrl);
+
+  if (isArabic) {
+    return {
+      metadataBase,
+      title: "المحامي محمد الدويش | خبير الإعسار وإعادة الهيكلة",
+      description: "شريك مدير في سي إم إس CMS العالمية — متخصص في نظام الإفلاس السعودي وإعادة الهيكلة المالية والمنازعات المصرفية",
+      icons: {
+        icon: "/icon",
+        apple: "/apple-icon",
       },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mohammed Al-Dowayesh",
-    description:
-      "شريك مدير | سي إم إس (CMS) العالمية\nخبير نظام الإفلاس السعودي • إعادة الهيكلة • التحكيم الدولي\n+17 عاماً من تمثيل القضايا المليارية",
-    images: ["/aldowayesh-og.png"],
-  },
-};
+      alternates: {
+        languages: {
+          ar: "/ar",
+          en: "/en",
+        },
+      },
+      openGraph: {
+        title: "المحامي محمد الدويش",
+        description: "خبير الإعسار وإعادة الهيكلة — شريك مدير في سي إم إس CMS",
+        url: siteUrl,
+        siteName: "المحامي محمد الدويش",
+        locale: "ar_SA",
+        type: "website",
+        images: [
+          {
+            url: "/aldowayesh-og.png",
+            width: 1200,
+            height: 630,
+            alt: "المحامي محمد الدويش — شريك مدير في سي إم إس",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "المحامي محمد الدويش",
+        description: "خبير الإعسار وإعادة الهيكلة — شريك مدير في سي إم إس CMS",
+        images: ["/aldowayesh-og.png"],
+      },
+    };
+  }
+
+  return {
+    metadataBase,
+    title: "Mohammed Al-Dowayesh | Bankruptcy & Restructuring Expert",
+    description: "Managing Partner at CMS Global — Expert in Saudi Bankruptcy Law, Financial Restructuring, and Banking Disputes",
+    icons: {
+      icon: "/icon",
+      apple: "/apple-icon",
+    },
+    alternates: {
+      languages: {
+        ar: "/ar",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      title: "Mohammed Al-Dowayesh",
+      description: "Bankruptcy & Restructuring Expert — Managing Partner at CMS Global",
+      url: siteUrl,
+      siteName: "Mohammed Al-Dowayesh",
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/aldowayesh-og.png",
+          width: 1200,
+          height: 630,
+          alt: "Mohammed Al-Dowayesh — Managing Partner at CMS Global",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Mohammed Al-Dowayesh",
+      description: "Bankruptcy & Restructuring Expert — Managing Partner at CMS Global",
+      images: ["/aldowayesh-og.png"],
+    },
+  };
+}
 
 
 export default function RootLayout({
