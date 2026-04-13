@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mohammed Al-Dowayesh",
     description:
-      "Managing Partner at CMS Global — Expert in Bankruptcy Law & Restructuring",
+      "شريك مدير | سي إم إس (CMS) العالمية\nخبير نظام الإفلاس السعودي • إعادة الهيكلة • التحكيم الدولي\n+17 عاماً من تمثيل القضايا المليارية",
     url: siteUrl,
     siteName: "Mohammed Al-Dowayesh",
     locale: "ar_SA",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
         url: "/aldowayesh-og.png",
         width: 1200,
         height: 630,
-        alt: "Mohammed Al-Dowayesh — Managing Partner at CMS Global",
+        alt: "المحامي محمد الدويش — شريك مدير في سي إم إس",
       },
     ],
   },
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohammed Al-Dowayesh",
     description:
-      "Managing Partner at CMS Global — Expert in Bankruptcy Law & Restructuring",
+      "شريك مدير | سي إم إس (CMS) العالمية\nخبير نظام الإفلاس السعودي • إعادة الهيكلة • التحكيم الدولي\n+17 عاماً من تمثيل القضايا المليارية",
     images: ["/aldowayesh-og.png"],
   },
 };
