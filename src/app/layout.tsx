@@ -34,7 +34,7 @@ const englishBody = Crimson_Pro({
   display: "swap",
 });
 
-const siteUrl = "https://dr-hassan-law.vercel.app";
+const siteUrl = "https://aldowayesh-law.vercel.app";
 
 const localeBootstrap = `(function () {
   var locale = location.pathname.split("/")[1] === "en" ? "en" : "ar";
@@ -45,11 +45,11 @@ const localeBootstrap = `(function () {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dr. Hassan Hashem Al-Maliki | Attorney & Legal Consultant",
-    template: "%s | Dr. Hassan Al-Maliki",
+    default: "Mohammed Al-Dowayesh | Managing Partner at CMS Global",
+    template: "%s | Mohammed Al-Dowayesh",
   },
   description:
-    "Official bilingual legal platform of Dr. Hassan Hashem Al-Maliki. Specialised in Financial Law, Legislative Advisory, and Certified Translation.",
+    "Official site of Mohammed Al-Dowayesh — Managing Partner at CMS Global, Expert in Saudi Bankruptcy Law & Restructuring.",
   icons: {
     icon: "/icon",
     apple: "/apple-icon",
@@ -61,11 +61,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Dr. Hassan Hashem Al-Maliki",
+    title: "Mohammed Al-Dowayesh",
     description:
-      "Premium bilingual legal advisory for institutions, investors, and cross-border matters.",
+      "Managing Partner at CMS Global — Expert in Bankruptcy Law & Restructuring",
     url: siteUrl,
-    siteName: "Dr. Hassan Al-Maliki",
+    siteName: "Mohammed Al-Dowayesh",
     locale: "ar_SA",
     type: "website",
     images: [
