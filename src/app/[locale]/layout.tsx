@@ -21,14 +21,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const nav = await getTranslations({ locale, namespace: "nav" });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aldowayesh-law.vercel.app";
 
+  const ogDescription = locale === "ar"
+    ? "شريك مدير | سي إم إس (CMS) العالمية\nخبير نظام الإفلاس السعودي • إعادة الهيكلة • التحكيم الدولي\n+17 عاماً من تمثيل القضايا المليارية"
+    : "Managing Partner | CMS Global\nExpert in Saudi Bankruptcy Law • Restructuring • International Arbitration\n+17 Years of Billion-Dollar Case Representation";
+
   return {
     title: `${nav("brand")} | ${t("title")}`,
     description: t("description"),
     openGraph: {
       title: locale === "ar" ? "المحامي محمد الدويش" : "Mohammed Al-Dowayesh",
-      description: locale === "ar"
-        ? "خبير الإعسار وإعادة الهيكلة المالية"
-        : "Bankruptcy & Restructuring Expert",
+      description: ogDescription,
       url: `${siteUrl}/${locale}`,
       siteName: "Mohammed Al-Dowayesh",
       images: [
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           url: "/aldowayesh-og.png",
           width: 1200,
           height: 630,
-          alt: "المحامي محمد الدويش",
+          alt: "المحامي محمد الدويش — شريك مدير في سي إم إس",
         },
       ],
       locale: locale === "ar" ? "ar_SA" : "en_US",
@@ -45,9 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     twitter: {
       card: "summary_large_image",
       title: locale === "ar" ? "المحامي محمد الدويش" : "Mohammed Al-Dowayesh",
-      description: locale === "ar"
-        ? "خبير الإعسار وإعادة الهيكلة"
-        : "Bankruptcy & Restructuring Expert",
+      description: ogDescription,
       images: ["/aldowayesh-og.png"],
     },
   };
