@@ -39,7 +39,9 @@ export function Contact({
     : "text-[10px] uppercase tracking-[0.24em] text-[var(--color-text-muted)] font-semibold";
 
   const hasRealEmail = !emailValue.includes("[domain]");
-  const mapsUrl = "https://www.google.com/maps?q=24.470737,46.422503";
+  const mapLat = "24.681737";
+  const mapLng = "46.782679";
+  const mapsUrl = `https://www.google.com/maps?q=${mapLat},${mapLng}`;
   const mapsLabel = isArabic ? "افتح في خرائط Google" : "Open in Google Maps";
 
   return (
@@ -112,7 +114,9 @@ export function Contact({
               <p className={labelClass}>{locationLabel}</p>
               <p className="text-lg leading-relaxed text-[var(--color-text)]">{location}</p>
               <p className="text-sm text-[var(--color-text-muted)] opacity-80">
-                {isArabic ? "المبنى 6677 — الرمز البريدي 23216" : "Building 6677 — Postal Code 23216"}
+                {isArabic 
+                  ? "مبنى 3510 — طريق الأمير سعد بن عبدالرحمن الأول — الروابي — 14215" 
+                  : "Building 3510 — Prince Saad bin Abdulrahman Al-Awal Rd. Al-Rawabi — 14215"}
               </p>
               <a
                 href={mapsUrl}
@@ -131,7 +135,7 @@ export function Contact({
             {/* Google Maps Embed */}
             <div data-reveal className="overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-bg-elevated)]/40 h-52 sm:h-64 relative grayscale contrast-[1.2]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.6!2d39.18259!3d21.517202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sar!2ssa!4v1712620000000!5m2!1sar!2ssa"
+                src={`https://www.google.com/maps?q=${mapLat},${mapLng}&z=15&output=embed`}
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: "invert(100%) hue-rotate(180deg) brightness(0.6) contrast(1.1)" }}
