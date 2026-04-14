@@ -28,7 +28,19 @@
     --color-cta-secondary-bg: transparent;
     --color-cta-secondary-text: var(--color-text);
     --color-cta-secondary-border: var(--color-text);
-    --color-whatsapp: #25d366;
+--color-whatsapp: #25d366;
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(to right, rgba(17, 29, 53, 0.95) 0%, rgba(17, 29, 53, 0.5) 50%, transparent 100%);
+  }
+
+  .hero-gradient-glow {
+    background: radial-gradient(ellipse at top right, rgba(201, 168, 76, 0.15), transparent 70%);
+  }
+
+  .hero-glass-line {
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
   }
 
   body {

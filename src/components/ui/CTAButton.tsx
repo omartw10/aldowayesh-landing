@@ -20,7 +20,7 @@ export function CTAButton({ href, variant, children, className = "", locale = "a
   
   const classes =
     variant === "primary"
-      ? "text-[#050f09] border-transparent shadow-[0_12px_40px_rgba(158,130,69,0.3)] hover:shadow-[0_15px_45px_rgba(158,130,69,0.45)] hover:-translate-y-1 active:scale-95"
+      ? "text-[var(--color-cta-primary-text)] border-transparent shadow-[0_12px_40px_rgba(158,130,69,0.3)] hover:shadow-[0_15px_45px_rgba(158,130,69,0.45)] hover:-translate-y-1 active:scale-95"
       : "border-[var(--color-gold)]/50 bg-transparent text-[var(--color-text)] hover:border-[var(--color-gold)] hover:bg-[var(--color-gold)]/10 hover:-translate-y-1 active:scale-95";
 
   return (

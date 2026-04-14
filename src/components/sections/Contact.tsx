@@ -66,7 +66,7 @@ export function Contact({
             <div className="flex flex-col sm:flex-row gap-5">
               <a
                 href="https://wa.me/966506488848"
-                className="inline-flex min-h-[4rem] items-center justify-center gap-3 rounded-full px-10 py-3 text-base font-bold text-[#050f09] transition-all duration-500 hover:-translate-y-1 shadow-lg relative overflow-hidden group"
+                className="inline-flex min-h-[4rem] items-center justify-center gap-3 rounded-full px-10 py-3 text-base font-bold text-[var(--color-cta-primary-text)] transition-all duration-500 hover:-translate-y-1 shadow-lg relative overflow-hidden group"
                 style={{ background: 'var(--gold-gradient)', backgroundSize: '100% 100%' }}
               >
                 <span className="absolute inset-0 z-0 block w-full h-full transform -translate-x-full bg-gradient-to-r from-transparent via-[var(--color-gold-light)]/15 to-transparent group-hover:transition-all group-hover:duration-1000 group-hover:translate-x-full pointer-events-none" />

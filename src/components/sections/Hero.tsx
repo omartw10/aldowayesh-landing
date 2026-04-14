@@ -3,6 +3,7 @@ import Image from "next/image";
 import { HeroReveal } from "@/components/ui/HeroReveal";
 import { ScalesIcon } from "@/components/ui/ScalesIcon";
 import { CTAButton } from "../ui/CTAButton";
+import { CounterStat } from "../ui/CounterStat";
 
 type HeroProps = {
   locale: string;
@@ -94,10 +95,10 @@ export function Hero({
         <HeroReveal className="relative flex flex-col lg:flex-row w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden bg-[var(--color-surface)]/45 backdrop-blur-md shadow-[0_30px_80px_var(--color-card-shadow)] border border-[var(--color-border)]/40" data-reveal="hero">
           
           {/* Glassy reflection top line */}
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
+          <div className="absolute top-0 inset-x-0 h-px hero-glass-line z-10" />
 
           {/* Subtle global gradient inside the card to enrich the tones */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--color-gold-dim),transparent_70%)] pointer-events-none z-0" />
+          <div className="absolute inset-0 hero-gradient-glow pointer-events-none z-0" />
 
           {/* ─── TEXT PORTION ─── */}
           <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 py-8 sm:px-12 lg:px-14 xl:px-16 lg:py-12 z-20">
@@ -140,15 +141,9 @@ export function Hero({
 
             {/* Seamless Metrics row directly embedded, no separate cards */}
             <div className="mt-8 flex items-center justify-between sm:justify-start sm:gap-12 pt-6 border-t border-[var(--color-border)]/50 max-w-2xl">
-              <div className="flex flex-col items-start gap-1">
-                <span className="text-2xl sm:text-3xl font-light text-[var(--color-gold)] tabular-nums">+17</span>
-                <span className="text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-[var(--color-text-muted)] mt-0.5">{_metricYears}</span>
-              </div>
+              <CounterStat end={17} suffix="+" label={_metricYears} duration={2000} delay={300} />
               <div className="w-px h-8 bg-[var(--color-border)]/50 hidden sm:block" />
-              <div className="flex flex-col items-start gap-1">
-                <span className="text-2xl sm:text-3xl font-light text-[var(--color-gold)] tabular-nums">$12B+</span>
-                <span className="text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-[var(--color-text-muted)] mt-0.5">{_metricCities}</span>
-              </div>
+              <CounterStat end={12} prefix="$" suffix="B+" label={_metricCities} duration={2500} delay={500} />
               <div className="w-px h-8 bg-[var(--color-border)]/50 hidden sm:block" />
               <div className="flex flex-col items-start gap-1">
                 <span className="text-lg sm:text-xl font-light text-[var(--color-gold)] mt-1.5 mb-0.5 uppercase">AR / EN</span>
@@ -191,8 +186,8 @@ export function Hero({
               quality={85}
             />
 
-            {/* Gradient blending the side of the image natively into the container background - much more subtle now */}
-            <div className={`absolute inset-0 z-10 ${imageBlendGradient} from-[var(--color-surface)] via-[var(--color-surface)]/10 to-transparent pointer-events-none`} />
+            {/* Gradient blending the side of the image natively into the container background */}
+            <div className={`absolute inset-0 z-10 hero-gradient-overlay ${imageBlendGradient} from-[var(--color-surface)] via-[var(--color-surface)]/10 to-transparent pointer-events-none`} />
 
             {/* Gradient blending the bottom of the image for consistent depth - adjusted for the new integrated plaque */}
             <div className="absolute inset-x-0 bottom-0 top-1/2 z-10 bg-gradient-to-t from-[var(--color-surface)] via-[var(--color-surface)]/80 to-transparent pointer-events-none" />

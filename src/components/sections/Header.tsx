@@ -58,7 +58,7 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
 
               <a
                 href="https://wa.me/966506488848"
-                className="hidden lg:flex min-h-[2.85rem] items-center justify-center rounded-full px-7 text-[12px] font-bold text-[#050f09] transition-all duration-500 hover:-translate-y-0.5 shadow-md relative overflow-hidden group"
+                className="hidden lg:flex min-h-[2.85rem] items-center justify-center rounded-full px-7 text-[12px] font-bold text-[var(--color-cta-primary-text)] transition-all duration-500 hover:-translate-y-0.5 shadow-md relative overflow-hidden group"
                 style={{ background: 'var(--gold-gradient)', backgroundSize: '100% 100%' }}
               >
                 <span className="absolute inset-0 z-0 block w-full h-full transform -translate-x-full bg-gradient-to-r from-transparent via-[var(--color-gold-light)]/15 to-transparent group-hover:transition-all group-hover:duration-1000 group-hover:translate-x-full pointer-events-none" />
@@ -106,7 +106,7 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               <div className="flex flex-col gap-3 px-2">
                  <a 
                    href="tel:+966506488848" 
-                   className="flex items-center justify-center min-h-[3.5rem] rounded-xl font-bold shadow-md relative overflow-hidden group text-[#050f09]"
+                   className="flex items-center justify-center min-h-[3.5rem] rounded-xl font-bold shadow-md relative overflow-hidden group text-[var(--color-cta-primary-text)]"
                    style={{ background: 'var(--gold-gradient)', backgroundSize: '100% 100%' }}
                  >
                    <span className="absolute inset-0 z-0 block w-full h-full transform -translate-x-full bg-gradient-to-r from-transparent via-[var(--color-gold-light)]/15 to-transparent group-hover:transition-all group-hover:duration-1000 group-hover:translate-x-full pointer-events-none" />
